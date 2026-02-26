@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# Environment variables & secrets
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env*
+
+# Database (if using SQLite for the challenge)
+*.db
+*.sqlite
+*.sqlite3
+
+# FastAPI / Uvicorn logs/pids (if any)
+*.pid
+instance/
+.webassets-cache
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Testing / coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.pytest_cache/
+.tox/
+.nox/
+coverage/
+
+# Logs
+*.log
+logs/
