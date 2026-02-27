@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from starlette import status
 from sqlalchemy.orm import Session
 from typing import List
@@ -10,6 +11,18 @@ app = FastAPI()
 
 # Create database tables on startup
 Base.metadata.create_all(bind=engine)
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post(
     "/tasks",
@@ -86,6 +99,6 @@ def delete_task(task_id: int, db: Session = Depends(get_db)):
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Task not found",
         )
+    return
     
 
-    
